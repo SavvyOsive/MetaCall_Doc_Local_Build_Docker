@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building And Installing MetaCall &mdash; MetaCall User Guide</title><link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Install MetaCall from Docker Hub" href="../dockerHub/index.html" />
+    <link rel="prev" title="Installation From Latest Release" href="../latest_release/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html"><img src="../../../../_static/logo-d.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">       MetaCall Core</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../intro/index.html"> Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../motivation/index.html"> Motivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart/index.html"> QuickStart</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html"> Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../scriptInstall/index.html">     Install using shell script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../latest_release/index.html">     Install from latest release</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">     Build and Install manually</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build-options">Build Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#coverage">Coverage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#debugging">Debugging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-on-cloud-gitpod">Build on Cloud - Gitpod</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dockerHub/index.html">     Install from DockerHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guixPackageManager/index.html">     Install via Guix package manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../aur/index.html">     Install using ArchLinux AUR</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../languageSupport/index.html"> Language Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projectsUsingMetaCall/index.html"> Projects Using MetaCall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/index.html"> Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../architecture/index.html"> Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/index.html"> Application Programming Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../platformSupport/index.html"> Platform Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faas/index.html">       FaaS Platform For MetaCall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../deploy/index.html">       Deploy Into MetaCall FaaS platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">       UseCases</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">MetaCall</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Core</a> &raquo;</li>
+          <li><a href="../index.html">Installation</a> &raquo;</li>
+      <li>Building And Installing MetaCall</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/modules/core/install/buildSystem/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="building-and-installing-metacall">
+<h1>Building And Installing MetaCall<a class="headerlink" href="#building-and-installing-metacall" title="Permalink to this headline">¶</a></h1>
+<p>Follow these steps to build and install METACALL manually.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/metacall/core.git
+mkdir core/build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> core/build
+cmake ..
+
+<span class="c1"># Unix (Linux and MacOs)</span>
+sudo <span class="nv">HOME</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">&quot;</span> cmake --build . --target install
+
+<span class="c1"># Windows (or when installing to a path with permissions)</span>
+cmake --build . --target install
+</pre></div>
+</div>
+<section id="build-options">
+<h2>Build Options<a class="headerlink" href="#build-options" title="Permalink to this headline">¶</a></h2>
+<p>These options can be set using -D prefix when configuring CMake. For example, the following configuration enables the build of Python and Ruby loaders.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake -DOPTION_BUILD_LOADERS_PY<span class="o">=</span>On -DOPTION_BUILD_LOADERS_RB<span class="o">=</span>On ..
+</pre></div>
+</div>
+<p>Available build options are the following ones.</p>
+<table class="colwidths-given docutils align-center" id="id1">
+<caption><span class="caption-text">Build Options</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">Option</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">Description</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">Value</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BUILD_SHARED_LIBS</p></td>
+<td><p>Build shared instead of static libraries.</p></td>
+<td><p>ON</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPTION_SELF_CONTAINED</p></td>
+<td><p>Create a self-contained install with all dependencies.</p></td>
+<td><p>OFF</p></td>
+</tr>
+<tr class="row-even"><td><p>OPTION_BUILD_TESTS</p></td>
+<td><p>Build tests.</p></td>
+<td><p>ON</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPTION_BUILD_BENCHMARKS</p></td>
+<td><p>Build benchmarks.</p></td>
+<td><p>OFF</p></td>
+</tr>
+<tr class="row-even"><td><p>OPTION_BUILD_DOCS</p></td>
+<td><p>Build documentation.</p></td>
+<td><p>OFF</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPTION_BUILD_EXAMPLES</p></td>
+<td><p>Build examples.</p></td>
+<td><p>ON</p></td>
+</tr>
+<tr class="row-even"><td><p>OPTION_BUILD_LOADERS</p></td>
+<td><p>Build loaders.</p></td>
+<td><p>ON</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPTION_BUILD_SCRIPTS</p></td>
+<td><p>Build scripts.</p></td>
+<td><p>ON</p></td>
+</tr>
+<tr class="row-even"><td><p>OPTION_BUILD_SERIALS</p></td>
+<td><p>Build serials.</p></td>
+<td><p>ON</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPTION_BUILD_DETOURS</p></td>
+<td><p>Build detours.</p></td>
+<td><p>ON</p></td>
+</tr>
+<tr class="row-even"><td><p>OPTION_BUILD_PORTS</p></td>
+<td><p>Build ports.</p></td>
+<td><p>OFF</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPTION_FORK_SAFE</p></td>
+<td><p>Enable fork safety.</p></td>
+<td><p>OFF</p></td>
+</tr>
+<tr class="row-even"><td><p>OPTION_THREAD_SAFE</p></td>
+<td><p>Enable thread safety.</p></td>
+<td><p>OFF</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPTION_COVERAGE</p></td>
+<td><p>Enable coverage.</p></td>
+<td><p>OFF</p></td>
+</tr>
+<tr class="row-even"><td><p>CMAKE_BUILD_TYPE</p></td>
+<td><p>Define the type of build.</p></td>
+<td><p>Release</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="coverage">
+<h2>Coverage<a class="headerlink" href="#coverage" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="build-on-cloud-gitpod">
+<h2>Build on Cloud - Gitpod<a class="headerlink" href="#build-on-cloud-gitpod" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../latest_release/index.html" class="btn btn-neutral float-left" title="Installation From Latest Release" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../dockerHub/index.html" class="btn btn-neutral float-right" title="Install MetaCall from Docker Hub" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, MetaCall.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

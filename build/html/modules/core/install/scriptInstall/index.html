@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installing MetaCall Using Shell Script &mdash; MetaCall User Guide</title><link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Installation From Latest Release" href="../latest_release/index.html" />
+    <link rel="prev" title="Installation" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html"><img src="../../../../_static/logo-d.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">       MetaCall Core</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../intro/index.html"> Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../motivation/index.html"> Motivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart/index.html"> QuickStart</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html"> Installation</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">     Install using shell script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installing-on-linux-or-macos">Installing on Linux or MacOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-on-windows">Installing on Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../latest_release/index.html">     Install from latest release</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../buildSystem/index.html">     Build and Install manually</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dockerHub/index.html">     Install from DockerHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guixPackageManager/index.html">     Install via Guix package manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../aur/index.html">     Install using ArchLinux AUR</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../languageSupport/index.html"> Language Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projectsUsingMetaCall/index.html"> Projects Using MetaCall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/index.html"> Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../architecture/index.html"> Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/index.html"> Application Programming Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../platformSupport/index.html"> Platform Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faas/index.html">       FaaS Platform For MetaCall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../deploy/index.html">       Deploy Into MetaCall FaaS platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">       UseCases</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">MetaCall</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Core</a> &raquo;</li>
+          <li><a href="../index.html">Installation</a> &raquo;</li>
+      <li>Installing MetaCall Using Shell Script</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/modules/core/install/scriptInstall/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installing-metacall-using-shell-script">
+<h1>Installing MetaCall Using Shell Script<a class="headerlink" href="#installing-metacall-using-shell-script" title="Permalink to this headline">¶</a></h1>
+<p>Cross-platform set of scripts to install MetaCall Core infrastructure.</p>
+<p>The following scripts are provided in order to install MetaCall:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://raw.githubusercontent.com/metacall/install/master/install.sh">install.sh</a>  <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">or</span> <span class="pre">zsh</span> <span class="pre">|</span> <span class="pre">Linux</span> <span class="pre">or</span> <span class="pre">MacOS</span></code></p></li>
+<li><p><a class="reference external" href="https://raw.githubusercontent.com/metacall/install/master/install.ps1">install.ps1</a> <code class="docutils literal notranslate"><span class="pre">PowerShell</span> <span class="pre">|</span> <span class="pre">Windows</span></code></p></li>
+</ul>
+<p>In order to install MetaCall in one line, curl or wget or powershell can be used:</p>
+<ul class="simple">
+<li><p>curl:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -sL https://raw.githubusercontent.com/metacall/install/master/install.sh <span class="p">|</span> sh
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>wget:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget -O - https://raw.githubusercontent.com/metacall/install/master/install.sh <span class="p">|</span> sh
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>powershell:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>powershell -NoProfile -ExecutionPolicy unrestricted -Command <span class="s2">&quot;[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; &amp;([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing &#39;https://raw.githubusercontent.com/metacall/install/master/install.ps1&#39;)))&quot;</span>
+</pre></div>
+</div>
+<section id="installing-on-linux-or-macos">
+<h2>Installing on Linux or MacOS<a class="headerlink" href="#installing-on-linux-or-macos" title="Permalink to this headline">¶</a></h2>
+<p>Additional parameters for the install script:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--update:</span></code> Updates automatically MetaCall if it is already installed without asking to the user.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--uninstall:</span></code> Uninstalls MetaCall if it is already installed without asking to the user. Overwrites the update command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--docker-install:</span></code> Runs Docker installation overwriting Docker fallback option over binary installation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--no-check-certificate:</span></code> When running binary installation (the default one), disables checking certificates when downloading the tarball. Useful for environments where there is not certificates, but insecure.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--no-docker-fallback:</span></code> When running binary installation (the default one), disables Docker installation as fallback if the binary installation fails.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--from-path</span> <span class="pre">&lt;path&gt;:</span></code> Installs MetaCall from specific path, the &lt;path&gt; points to a previously download tarball located in your file system.</p></li>
+</ul>
+<p>Example usage:</p>
+<ul class="simple">
+<li><p>Install with curl without checking certificates and without docker fallback:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl --insecure -sL https://raw.githubusercontent.com/metacall/install/master/install.sh <span class="p">|</span> sh -s -- --no-check-certificate --no-docker-fallback
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Install with wget using Docker installer:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget -O - https://raw.githubusercontent.com/metacall/install/master/install.sh <span class="p">|</span> sh -s -- --docker-install
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Install with wget from a existing tarball located at /root/downloads/metacall-tarball-linux-amd64.tar.gz:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget -O - https://raw.githubusercontent.com/metacall/install/master/install.sh <span class="p">|</span> sh -s -- --from-path /root/downloads/metacall-tarball-linux-amd64.tar.gz
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Install MetaCall in a BusyBox without certificates:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget --no-check-certificate -O - https://raw.githubusercontent.com/metacall/install/master/install.sh <span class="p">|</span> sh -s -- --no-check-certificate
+</pre></div>
+</div>
+</section>
+<section id="installing-on-windows">
+<h2>Installing on Windows<a class="headerlink" href="#installing-on-windows" title="Permalink to this headline">¶</a></h2>
+<p>Additional parameters for the install script:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-InstallDir</span> <span class="pre">&lt;directory&gt;:</span></code> Defines a custom folder in order to install MetaCall in, otherwise it uses %LocalAppData%MetaCall by default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Version</span> <span class="pre">&lt;version&gt;:</span></code> Version of the tarball to be downloaded. Versions are available here. Uses latest version by default.</p></li>
+</ul>
+<p>Example usage:</p>
+<ul class="simple">
+<li><p>Install tarball version v0.1.0 into D:metacall:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>powershell -NoProfile -ExecutionPolicy unrestricted -Command <span class="s2">&quot;[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; &amp;([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing &#39;https://raw.githubusercontent.com/metacall/install/master/install.ps1&#39;))) -InstallDir &#39;D:\metacall&#39; -Version &#39;0.1.0&#39;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p>Refer to <a class="reference external" href="https://github.com/metacall/install">repo</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./test.sh
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../latest_release/index.html" class="btn btn-neutral float-right" title="Installation From Latest Release" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, MetaCall.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
